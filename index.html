@@ -101,6 +101,33 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
+         
+        var canvas2 = document.getElementById('dataCanvas'); //links to my second canvas where picture will be altered 
+        var context2 = canvas2.getContext("2d");             // 2 dimensions for second canvas 
+        
+        var imageData = context.getImageData(0, 0, 600, 500); //makes image same size as the canvas'
+        var canvasData = imageData.data; //stores the data of the canvas pixels
+         
+        for(var i = 0; i < canvasData.length; i += 4) { //loop that processes each pixel of the image
+            canvasData[i] = 0; //sets red to 0 so no red is generated
+            canvasData[i + 1] = 0; // green to 0 so no green is generated
+         }
+         
+         context2.putImageData(imageData, 0, 0); //Generates the blue cast onto the original image on the second canvas 
+         
+        } // end of img.onload
+       
+        img.src = reader.result;
+      } //  end of reader.onload
+     
+      reader.readAsDataURL(file);
+    } // end of the if statement checking that file is an image
+    else
+    {
+      // this is what happens if the orignial file selected is not an image file
+      messageDisplayArea.innerHTML = "File not supported!"
+    } // end of the else statement if file in NOT an image
+  }); // end of the fileInput.addEventListener function
           
           
           
