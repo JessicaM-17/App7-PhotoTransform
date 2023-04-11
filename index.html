@@ -102,7 +102,7 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
          
-        var canvas2 = document.getElementById('dataCanvas'); //links to my second canvas where picture will be altered 
+        var canvas2 = document.getElementById('myCanvas2'); //links to my second canvas where picture will be altered 
         var context2 = canvas2.getContext("2d");             // 2 dimensions for second canvas 
         
         var imageData = context.getImageData(0, 0, 600, 500); //makes image same size as the canvas'
@@ -170,9 +170,9 @@
         context.fillText("Original image will go here", 10, 20);
       </script>
      
-      <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script creates the second cavas and puts the text on the canvas "dataCanvas" */
-        var canvas2 = document.getElementById('dataCanvas');
+        var canvas2 = document.getElementById('myCanvas2');
         var context2 = canvas2.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
