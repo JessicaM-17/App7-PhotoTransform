@@ -108,11 +108,11 @@
         var canvasData = imageData.data; //stores data of the the canvas pixels
          
         for(var i = 0; i < canvasData.length; i += 4) { //loop that processes each pixel of the image placed
-            canvasData[i] = 0; //sets red to 0 so no red is ouputted
-            canvasData[i + 1] = 0; //sets green to 0 so no green is outputted
+            canvasData[i] = 0; //sets red to 0 so no red is ouputted- cancels out red in alt image
+            canvasData[i + 1] = 0; //sets green to 0 so no green is outputted - cancels out green in alt image 
          }
          
-         context2.putImageData(imageData, 0, 0); //outputs the blue image onto second canvas
+         context2.putImageData(imageData, 0, 0); //outputs the blue image onto second canvas- brings out only blue in alt image 
          
         } // end of img.onload
        
@@ -145,7 +145,7 @@
       <div id="messageDisplayArea"></div>
       
        <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
@@ -159,7 +159,7 @@
         var context2 = canvas2.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
-        context2.fillText("Altered image will go here", 10, 20);
+        context2.fillText("Altered image will go here!", 10, 20);
       </script>
      
     </div><!-- /content -->
