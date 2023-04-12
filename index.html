@@ -101,18 +101,18 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
          
-        var canvas2 = document.getElementById('myCanvas2');      //links to my second canvas where picture will be altered 
-        var context2 = canvas2.getContext("2d");                 // 2 dimensions for second canvas 
-        
-        var imageData = context.getImageData(0, 0, 600, 500);   //makes image same size as the canvas'
-        var canvasData = imageData.data;                        //stores the data of the canvas pixels
+        var canvas2 = document.getElementById('myCanvas2'); //links to the second canvas
+        var context2 = canvas2.getContext("2d"); // 2d access to second canvas 
          
-        for(var i = 0; i < canvasData.length; i += 4) {        //loop that processes each pixel of the image
-            canvasData[i] = 0; //sets red to 0 so no red is generated
-            canvasData[i + 1] = 0; // green to 0 so no green is generated
+        var imageData = context.getImageData(0, 0, 600, 500); //Makes pic same size as first canvas
+        var canvasData = imageData.data; //stores data of the the canvas pixels
+         
+        for(var i = 0; i < canvasData.length; i += 4) { //loop that processes each pixel of the image placed
+            canvasData[i] = 0; //sets red to 0 so no red is ouputted
+            canvasData[i + 1] = 0; //sets green to 0 so no green is outputted
          }
          
-         context2.putImageData(imageData, 0, 0); //Generates the blue cast onto the original image on the second canvas 
+         context2.putImageData(imageData, 0, 0); //outputs the blue image onto second canvas
          
         } // end of img.onload
        
@@ -127,26 +127,10 @@
       messageDisplayArea.innerHTML = "File not supported!"
     } // end of the else statement if file in NOT an image
   }); // end of the fileInput.addEventListener function
-          
-          
-          
-          
-        } // end of img.onload
-        
-        img.src = reader.result;
-      } //  end of reader.onload
-      
-      reader.readAsDataURL(file);
-    } // end of the if statement checking that file is an image
-    else
-    {
-      // this is what happens if the orignial file selected is not an image file
-      messageDisplayArea.innerHTML = "File not supported!"
-    } // end of the else statement if file in NOT an image
-  }); // end of the fileInput.addEventListener function
  } // end of the window.onload function
  </script>
  </head>
+
 
  <body>
   <div data-role="page">
@@ -169,13 +153,13 @@
         context.fillText("Original image will go here!", 10, 20);
       </script>
      
-        <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+         <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas2" */
         var canvas2 = document.getElementById('myCanvas2');
         var context2 = canvas2.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
-        context2.fillText("Altered image will go here!", 10, 20);
+        context2.fillText("Altered image will go here", 10, 20);
       </script>
      
     </div><!-- /content -->
