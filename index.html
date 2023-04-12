@@ -96,7 +96,6 @@
           /*This finally draws the image onto the first drawing canvas. The specific canvas is referred to by "context". This is established down in the HTML part of the file just under the first <canvas> tag. If we weren't worried about fixing an iPhone bug we would use context.drawImage(image, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500) instead of drawImageIOSFix */
         
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
-
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
@@ -161,13 +160,13 @@
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
         context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        context.fillText("Original image will go here!", 10, 20);
       </script>
      
         <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
@@ -176,7 +175,7 @@
         var context2 = canvas2.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
-        context2.fillText("Altered image will go here", 10, 20);
+        context2.fillText("Altered image will go here!", 10, 20);
       </script>
      
     </div><!-- /content -->
